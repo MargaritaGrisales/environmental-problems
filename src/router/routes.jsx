@@ -3,10 +3,12 @@ import { createBrowserRouter } from "react-router-dom";
 import Login from "../pages/login/Login.jsx";
 import ProtectedRoute from "./ProtectedRoute.jsx";
 import World from "../pages/world/World.jsx";
-import Home from "../pages/home/home.jsx";
-import Nosotros from "../pages/home/nosotros/nosotros.jsx"; 
+import Home from "../pages/home/Home.jsx";
+import Nosotros from "../pages/home/nosotros/Nosotros.jsx"; 
+import  ProEscasez  from "../components/escasez/ProEscasez.jsx";
 import Introduction from "../pages/water-pollution/Introduction.jsx";
-import WaterAcidification from "../pages/waterAcidification/water_Acidification.jsx";
+import WaterAcidification from "../pages/waterAcidification/Water_Acidification.jsx";
+
 
 
 const router = createBrowserRouter([
@@ -28,9 +30,12 @@ const router = createBrowserRouter([
   },
   {
     path: "/water-pollution",
-    element: <ProtectedRoute element={<Introduction />} />
+    element: <ProtectedRoute element={<Introduction/>} />
   },
   {
+    path: "/escasez", // Usar una ruta más clara
+    element: <ProEscasez/> // Esta ruta no está protegida
+  }, {
     path: "/water-acidification",
     element: <ProtectedRoute element={<WaterAcidification />} />
   },
